@@ -1,5 +1,14 @@
+
 print("Secure Login System")
-def main():
+credentials = {}
+
+def sign_up():
+    username = input("Enter an username: ")
+    password = input("Enter a password: ")
+    credentials[username] = password
+
+    database = {}
+def login():
     
     login_successful = attempt_user_login({})
     
@@ -52,6 +61,7 @@ def sanitise_user_input(user_input):
     if len(user_input) > 25:
         print("Input too long, please try again.")
         main()
+
 
     return user_input
     
