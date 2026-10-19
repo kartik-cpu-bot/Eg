@@ -1,5 +1,5 @@
+print("Secure Login System")
 def main():
-    print("Secure Login System")
     
     login_successful = attempt_user_login({})
     
@@ -47,12 +47,12 @@ def attempt_user_login(user_database):
     return login_successful
     
 def sanitise_user_input(user_input):
-    
-    user_input = str(user_input.strip)
-    if len(user_input) > 50:
+    user_input = str(user_input)
+    user_input.strip
+    if len(user_input) > 25:
         print("Input too long, please try again.")
-        
-        
+        main()
+
     return user_input
     
 def compute_password_hash(password):
