@@ -2,25 +2,21 @@
 print("Secure Login System")
 credentials = {}
 
-def sign_up():
+def sign_up(): 
     username = input("Enter an username: ")
     password = input("Enter a password: ")
     credentials[username] = password
 
-    database = {}
 def login():
     
-    login_successful = attempt_user_login({})
+    login_successful = attempt_user_login()
     
     if login_successful:
         print("Access granted")
     else:
         print("Access denied")
 
-def attempt_user_login(user_database):
-    #Single Account
-    test_username = "admin"
-    test_password = "1234"
+def attempt_user_login():
     
     attempt_count = 0
     maximum_attempts = 3 
@@ -31,18 +27,15 @@ def attempt_user_login(user_database):
 
         username = sanitise_user_input(input("Username: "))
         password = sanitise_user_input(input("Password: "))
+
+        print(credentials)
         
-        user_correct = username == test_username
-        password_correct = password == test_password
-        
-        if user_correct and password_correct:
+        if :
             print("Login Successful")
             login_successful = True
         else:
-            if not user_correct:
-                print("User not found")
-            else:
-                print("Incorrect password")
+            print("User not found or Incorrect Password")
+
                 
         attempt_count += 1
 
@@ -68,5 +61,13 @@ def sanitise_user_input(user_input):
 def compute_password_hash(password):
     return 0
 
-if __name__ == "__main__":
-    main()
+while True:
+    choice = sanitise_user_input(input("Sign Up (S) or Login in (L): "))
+    choice.lower
+    print(choice)
+    if choice == "s":
+        sign_up()
+    elif choice == "l":
+        login()
+    else:
+        print("Try Again")
